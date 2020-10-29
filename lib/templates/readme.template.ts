@@ -1,8 +1,8 @@
 import { BoilerOptions } from 'lib/types/BoilerOptions';
 import Template from './Template';
 
-class ReadmeTemplate implements Template {
-  static generate(options: BoilerOptions): string {
+export class ReadmeTemplate implements Template {
+  generate(options: BoilerOptions): string {
     return `
     # ${options.meta.project.name}
 
@@ -14,5 +14,9 @@ class ReadmeTemplate implements Template {
 
     ${options.meta.project.license}
     `;
+  }
+
+  getFileName(): string {
+    return 'README.md';
   }
 }

@@ -6,7 +6,7 @@ export type BoilerOptions = {
   project: ProjectOptions;
 };
 
-export type ProjectType = 'bare' | 'ts-basic' | 'ts-cli' | 'ts-micro-service';
+export type ProjectType = 'bare' | 'basic' | 'cli' | 'micro-service';
 
 type ProjectMetaData = {
   name: string;
@@ -22,4 +22,5 @@ type AuthorMetaData = {
 
 type ProjectOptions = {
   type: ProjectType;
+  typescript: boolean;
 };

@@ -4,19 +4,23 @@ import { BoilerOptions } from 'lib/types/BoilerOptions';
 import { BoilerplateFile } from './BoilerplateFile';
 
 class BoilerplateProject {
-  files: BoilerplateFile[];
+  projectFiles: BoilerplateFile<Template>[];
 
   constructor(options: BoilerOptions, templates: Template[]) {
-    this.files = [];
+    this.projectFiles = [];
+
+    templates.forEach((template) => {
+      this.projectFiles.push(new BoilerplateFile<Template>(template, options));
+    });
   }
 
-  write(): void {
-    for (const boilerplateFile of this.files) {
-      const fileContent = new Uint8Array(Buffer.from(boilerplateFile.content));
-      writeFile(boilerplateFile.fileName, fileContent, (err) => {
-        if (err) throw err;
-        console.log(`Successfully created ${boilerplateFile.templateType}.`);
-      });
+  async write(): Promise<void> {
+    for (const boilerplateFile of this.projectFiles) {
+      try {
+        await boilerplateFile.writeToFile();
+      } catch (err) {
+        throw err;
+      }
     }
   }
 }
