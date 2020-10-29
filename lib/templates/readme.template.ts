@@ -1,4 +1,5 @@
 import { BoilerOptions } from 'lib/types/BoilerOptions';
+
 import Template from './Template';
 
 export class ReadmeTemplate implements Template {

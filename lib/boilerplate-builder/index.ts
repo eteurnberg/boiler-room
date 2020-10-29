@@ -1,6 +1,7 @@
 import { ReadmeTemplate } from 'lib/templates/readme.template';
 import Template from 'lib/templates/Template';
 import { BoilerOptions } from 'lib/types/BoilerOptions';
+
 import BoilerplateProject from './BoilerplateProject';
 
 export default class BoilerplateBuilder {

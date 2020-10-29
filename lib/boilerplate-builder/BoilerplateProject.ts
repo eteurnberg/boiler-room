@@ -1,8 +1,9 @@
 import Template from 'lib/templates/Template';
 import { BoilerOptions } from 'lib/types/BoilerOptions';
+
 import { BoilerplateFile } from './BoilerplateFile';
 
-class BoilerplateProject {
+export default class BoilerplateProject {
   projectFiles: BoilerplateFile<Template>[];
 
   constructor(options: BoilerOptions, templates: Template[]) {
