@@ -1,4 +1,3 @@
-import { writeFile } from 'fs';
 import Template from 'lib/templates/Template';
 import { BoilerOptions } from 'lib/types/BoilerOptions';
 import { BoilerplateFile } from './BoilerplateFile';
