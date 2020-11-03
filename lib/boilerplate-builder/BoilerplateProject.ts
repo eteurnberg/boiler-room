@@ -1,5 +1,5 @@
-import Template from 'lib/templates/Template';
-import { BoilerOptions } from 'lib/types/BoilerOptions';
+import Template from 'templates/Template';
+import { BoilerOptions } from 'types/BoilerOptions';
 
 import { BoilerplateFile } from './BoilerplateFile';
 

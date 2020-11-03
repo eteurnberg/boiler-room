@@ -1,4 +1,4 @@
-import { BoilerOptions } from 'lib/types/BoilerOptions';
+import { BoilerOptions } from 'types/BoilerOptions';
 
 import Template from './Template';
 
