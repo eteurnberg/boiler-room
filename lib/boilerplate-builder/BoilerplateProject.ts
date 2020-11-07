@@ -1,7 +1,7 @@
-import Template from 'templates/Template';
-import { BoilerOptions } from 'types/BoilerOptions';
+import Template from '@templates/Template';
 
-import { BoilerplateFile } from './BoilerplateFile';
+import { BoilerplateFile } from '@/boilerplate-builder/BoilerplateFile';
+import { BoilerOptions } from '@/types/BoilerOptions';
 
 export default class BoilerplateProject {
   projectFiles: BoilerplateFile<Template>[];

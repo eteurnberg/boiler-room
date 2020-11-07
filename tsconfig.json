@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./lib",
+    "baseUrl": "lib",
     "target": "ES2020",
     "module": "CommonJS",
     "lib": ["ES2020"],
@@ -8,6 +8,10 @@
     "esModuleInterop": true,
     "outDir": "dist",
     "types": ["node"],
-    "sourceMap": true
+    "sourceMap": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@templates/*": ["templates/*"],
+    },
   }
 }

@@ -1,6 +1,7 @@
+import Template from '@templates/Template';
 import { promises as fs } from 'fs';
-import Template from 'templates/Template';
-import { BoilerOptions } from 'types/BoilerOptions';
+
+import { BoilerOptions } from '@/types/BoilerOptions';
 
 export interface WriteableFile<T extends Template> {
   fileName: string;

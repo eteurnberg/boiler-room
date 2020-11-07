@@ -1,5 +1,30 @@
 #!/usr/bin/env node
+
+import 'module-alias/register';
+
 import yargs from 'yargs';
+
+import BoilerplateBuilder from '@/boilerplate-builder';
+import { BoilerOptions } from '@/types/BoilerOptions';
+
+const options: BoilerOptions = {
+  meta: {
+    author: {
+      name: 'Emil',
+    },
+    project: {
+      name: 'TestProject',
+      description: 'A testing project',
+      repository: 'none',
+      license: 'None',
+      version: '0.0.1',
+    },
+  },
+  project: {
+    type: 'bare',
+    typescript: true,
+  },
+};
 
 yargs
   .scriptName('boiler')
@@ -14,8 +39,9 @@ yargs
         describe: 'type of app to create a boilerplate for',
       });
     },
-    function (argv) {
-      console.log('hello', argv.name, 'welcome to yargs!');
+    async function (argv) {
+      const builder = new BoilerplateBuilder(options);
+      return await builder.build();
     },
   )
   .options({

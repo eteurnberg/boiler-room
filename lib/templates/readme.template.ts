@@ -1,11 +1,11 @@
-import { BoilerOptions } from 'types/BoilerOptions';
+import Template from '@templates/Template';
+import dedent from 'dedent';
 
-import Template from './Template';
+import { BoilerOptions } from '@/types/BoilerOptions';
 
 export class ReadmeTemplate implements Template {
   generate(options: BoilerOptions): string {
-    return `
-    # ${options.meta.project.name}
+    const template = dedent`# ${options.meta.project.name}
 
     ${options.meta.project.description}
 
@@ -15,6 +15,8 @@ export class ReadmeTemplate implements Template {
 
     ${options.meta.project.license}
     `;
+
+    return template + '\n';
   }
 
   getFileName(): string {
