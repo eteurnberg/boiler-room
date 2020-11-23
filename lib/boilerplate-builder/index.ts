@@ -1,4 +1,5 @@
 import BoilerplateProject from '@/boilerplate-builder/BoilerplateProject';
+import NodePackageGenerator from '@/generators/node/NodePackageGenerator';
 import { ReadmeTemplate } from '@/templates/readme.template';
 import Template from '@/templates/Template';
 import { BoilerOptions } from '@/types/BoilerOptions';
@@ -20,6 +21,10 @@ export default class BoilerplateBuilder {
     // Write files
     try {
       await project.write();
+      const nodePackage = new NodePackageGenerator({
+        author: 'Emil',
+        license: 'MIT',
+      });
     } catch (err) {
       console.error('There was an error building the project: ', err.message);
       throw err;

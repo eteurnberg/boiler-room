@@ -6,7 +6,7 @@ const INIT_FILE_NAME = 'defaultNpmInit.json';
 type nodePackageConfig = Record<string, unknown> | init.Config | undefined;
 type preparedConfig = init.Config | Record<string, unknown>;
 
-export default class nodePackageGenerator {
+export default class NodePackageGenerator {
   initFilePath: string;
 
   constructor(initConfig: nodePackageConfig) {
@@ -17,7 +17,8 @@ export default class nodePackageGenerator {
     const currentDir = process.cwd();
 
     init(currentDir, this.initFilePath, processedConfig, (err, data) => {
-      // Do stuff
+      if (err) console.log(err);
+      else console.log('npm init succesful: ', data);
     });
   }
 

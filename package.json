@@ -43,6 +43,7 @@
     "glob": "^7.1.6",
     "init-package-json": "^2.0.1",
     "module-alias": "^2.2.2",
+    "promzard": "^0.3.0",
     "yargs": "^16.0.3"
   },
   "devDependencies": {
