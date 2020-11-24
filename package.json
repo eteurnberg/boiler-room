@@ -47,6 +47,7 @@
     "yargs": "^16.0.3"
   },
   "devDependencies": {
+    "@tsconfig/node14": "^1.0.0",
     "@types/chalk": "^2.2.0",
     "@types/dedent": "^0.7.0",
     "@types/glob": "^7.1.3",
