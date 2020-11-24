@@ -1,7 +1,9 @@
 import init from 'init-package-json';
 import path from 'path';
 
-const INIT_FILE_NAME = 'defaultNpmInit.json';
+import { BoilerOptions } from '@/types/BoilerOptions';
+
+const INIT_FILE_NAME = 'NodePackageConfig.js';
 
 type nodePackageConfig = Record<string, unknown> | init.Config | undefined;
 type preparedConfig = init.Config | Record<string, unknown>;
@@ -9,10 +11,11 @@ type preparedConfig = init.Config | Record<string, unknown>;
 export default class NodePackageGenerator {
   initFilePath: string;
 
-  constructor(initConfig: nodePackageConfig) {
+  constructor(projectOptions: BoilerOptions) {
     this.initFilePath = path.resolve(__dirname, INIT_FILE_NAME);
+    console.log('RESOLVED INIT FILE PATH: ', this.initFilePath);
 
-    const processedConfig = this.processConfig(initConfig);
+    const processedConfig = this.processConfig(projectOptions);
 
     const currentDir = process.cwd();
 
@@ -22,11 +25,11 @@ export default class NodePackageGenerator {
     });
   }
 
-  private processConfig(config: nodePackageConfig): preparedConfig {
-    if (config === undefined) return {};
-    const processedConfig: Record<string, unknown> = {
-      test: 'test',
+  private processConfig(options: BoilerOptions): preparedConfig {
+    if (options === undefined) return {};
+
+    return {
+      options: options,
     };
-    return processedConfig;
   }
 }

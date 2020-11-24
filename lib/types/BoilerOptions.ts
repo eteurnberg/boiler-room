@@ -18,6 +18,7 @@ type ProjectMetaData = {
 
 type AuthorMetaData = {
   name: string;
+  email: string;
 };
 
 type ProjectOptions = {

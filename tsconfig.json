@@ -5,6 +5,8 @@
     "outDir": "dist",
     "types": ["node"],
     "sourceMap": true,
+    "allowJs": true,
+    "checkJs": false,
     "paths": {
       "@/*": ["./*"],
       "@templates/*": ["templates/*"],

@@ -11,6 +11,7 @@ const options: BoilerOptions = {
   meta: {
     author: {
       name: 'Emil',
+      email: 'test@test.com',
     },
     project: {
       name: 'TestProject',
